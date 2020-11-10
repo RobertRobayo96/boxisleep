@@ -1,0 +1,209 @@
+<div class="breadcrumb-banner-area"
+    style="background: rgba(0, 0, 0, 0) url('assets/img/slider/colchon-slider.jpg') no-repeat scroll 0 0; background-size: cover">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center" *ngIf="product == null">Cargando...</h1>
+                    <h1 class="text-center" *ngIf="product != null">{{product.name}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .carousel-indicators li {
+        background-color: #00c6c1;
+    }
+</style>
+
+<!--Course Details Area Start-->
+<div class="course-details-area section-padding" *ngIf="product != null">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-12">
+                <div class="course-details-content">
+                    <div class="single-course-details">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <!-- <owl-carousel [options]="carouselOptions" [items]="product">
+                                    <div class="item col-md-12" *ngFor="let m of [1,2,3,4,5,6,7,8,9,10,11,12]">
+                                        <div class="single-teacher-item">
+                                            <div class="single-teacher-image">
+                                                <a><img [src]="i.image" alt=""></a>
+                                            </div>
+                                            <div class="single-teacher-text">
+                                                <h3><a>{{i.name}}</a></h3>
+                                                <h4>Instructor</h4>
+                                                <p>{{i.description}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </owl-carousel> -->
+                                <owl-carousel [options]="carouselOptions">
+
+                                 
+                                        <div class="single-teacher-item">
+                                            <div class="single-teacher-image">
+                                                <a><img src="{{imgUrl}}/{{product.main_picture}}" alt=""></a>
+                                            </div>
+                                            <div class="single-teacher-text">
+                                                <h3><a></a></h3>
+                                                <p class="text-justify"></p>
+                                            </div>
+                                        </div>
+                                  
+
+                                   
+                                        <div class="single-teacher-item">
+                                            <div class="single-teacher-image">
+                                                <a><img src="{{imgUrl}}/{{product.picture_one}}" alt="Comercial"></a>
+                                            </div>
+                                            <div class="single-teacher-text">
+                                                <h3><a></a></h3>
+                                                <p class="text-justify"></p>
+                                            </div>
+                                        </div>
+                                    
+                                </owl-carousel>
+                                <!-- <div class="overlay-effect">
+                                    <a *ngIf="product.main_picture == ''">
+                                        <img  src="{{imgUrl}}/{{product.main_picture}}" alt="">
+                                    </a>
+                                    <a *ngIf="product.main_picture != ''">
+                                        <img  src="{{imgUrl}}/{{product.main_picture}}" alt="">
+                                    </a>
+                                </div> -->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="single-item-text">
+                                        <h4>{{product.title}}</h4>
+                                        <div class="single-item-text-info">
+                                            <hr />
+                                            <span>Nombre: <span>{{product.name}}</span></span><span>Precio: <span>{{product.name}}</span></span>
+                                            <hr />
+                                            <span>Descripción del producto: <span>{{product.description}}</span></span>
+                                            <hr />
+                                            <span>Categoría: <span>{{product.category}}</span></span>
+                                            <hr />
+                                            <span>Area / Vendor: <span>{{product.dimension}}</span></span>
+                                            <hr />
+                                            <span>Código: <span>{{product.sku}}</span></span>
+                                            <hr />
+                                        </div>
+                                        <div class="course-text-content">
+                                            <p>{{product.description}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-light" (click)="comprar(product.id)"
+                    data-toggle="modal" data-target="#exampleModal">Comprar</button>
+                </div>
+            </div>
+            <!-- <div class="col-lg-3 col-md-12 col-12">
+
+                <div class="sidebar-widget" *ngIf="post != null">
+                    <div class="single-sidebar-widget">
+                        <div class="tution-wrapper">
+                            <div class="tution-fee">
+                                <h3 class="text-throught">${{post.price}}</h3>
+                                <hr />
+                                <h1>${{ post.price - ( (post.price * post.discount) / 100) }}</h1>
+                            </div>
+                            <div class="tutor-image">
+                                <img src="{{post.instructor.image}}" alt="">
+                            </div>
+                            <div class="single-teacher-text">
+                                <h3><a>{{post.instructor.name}}</a></h3>
+                                <h4>Instructor</h4>
+                                <button type="button" class="btn btn-light" (click)="openInstructor(post.instructor)"
+                                    data-toggle="modal" data-target="#exampleModal">Ver más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> -->
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-10">
+                <div class="product-details-content">
+                    <div>
+                        <h2>Método de entrenamiento</h2>
+                        <p>{{product.name}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="product-details-content">
+                    <div>
+                        <h2>Tipo de audiencia</h2>
+                        <p>{{product.name}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="product-details-content">
+                    <div>
+                        <h2>Prerrequisitos</h2>
+                        <p>{{product.title}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="product-details-content">
+                    <div>
+                        <h2>Contenido</h2>
+                        <ul>
+                            <li *ngFor="let s of splitStr(product.linkId)">
+                                <i class="far fa-circle"></i> {{s}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="product-details-content">
+                    <div>
+                        <h2>Objetivo</h2>
+                        <ul>
+                            <li *ngFor="let s of splitStr(product.title)">
+                                <i class="far fa-circle"></i> {{s}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+</div>
+<!--End of Course Details Area-->
+
+
+<!-- Teacher Modal -->
+<!-- Modal -->
+<div class="modal fade" *ngIf="instructor != null" id="exampleModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{instructor.name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{{instructor.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="breadcrumb-banner-area"
+    style="background: rgba(0, 0, 0, 0) url('assets/img/slider/colchon-slider.jpg') no-repeat scroll 0 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center" *ngIf="product != null">{{product.title}}</h1>
+                    <h1 class="text-center" *ngIf="product == null">Cargando...</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Contact Form Area Start-->
+<div class="contact-form-area section-padding" *ngIf="productsSku != null">
+    <div class="container">
+
+        <div class="row box">
+            <div class="col-md-8 offset-2">
+                <h4 class="contact-title text-center">
+                    {{productsSku.product.title}} -
+                    ${{ productsSku.sku.listPrice  }}
+                </h4>
+                <div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" value="{{productsSku.sku.name}} - " readonly />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" value="{{productsSku.sku.specifications}}" readonly />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" value="cubicweight: {{productsSku.sku.dimensions.cubicweight}}" readonly />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" value="weight: {{productsSku.sku.dimensions.weight}}" readonly />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" value="width: {{productsSku.sku.dimensions.width}}" readonly />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" value="length: {{productsSku.sku.dimensions.length}}" readonly />
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <button type="submit" class="button-default" (click)="registerPay()">COMPRAR <i
+                                    class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--End of Contact Form-->
+
+
+<br/>

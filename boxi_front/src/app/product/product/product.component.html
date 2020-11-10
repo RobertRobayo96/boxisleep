@@ -1,0 +1,60 @@
+<div class="breadcrumb-banner-area"
+   >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">NUESTROS PRODUCTOS</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--About Page Area Start-->
+<div class="about-page-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title-wrapper">
+                    <div class="section-title">
+                        <h3>COLCHONES</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <!--Gallery Area Start-->
+                <div class="gallery-area pt-110 pb-130">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-lg-4 col-md-6 mb-30"
+                                *ngFor="let pr of products | filterfor : selectedCategort : 'category'">
+                                <div class="gallery-img">
+                                    <h5>{{pr.name}}</h5>
+                                    <img src="{{imgUrl}}/{{pr.main_picture}}" alt="">
+                                    <div class="hover-effect">
+                                        <div class="zoom-icon">
+                                            <a routerLink="/product/description/{{pr.id}}" class="popup-image"><i class="fa fa-search-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--End of Gallery Area-->
+            </div>
+        </div>
+
+        
+
+    </div>
+</div>
+<!--End of About Page Area-->

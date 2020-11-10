@@ -1,0 +1,58 @@
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area"
+    style="background: rgba(0, 0, 0, 0) url('assets/img/student/register.jpg'); background-size: cover">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">REGISTRO</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+
+<!--Contact Form Area Start-->
+<div class="contact-form-area section-padding">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h4 class="contact-title">FORMULARIO DE REGISTRO</h4>
+                <form [formGroup]="form" (ngSubmit)="insert()">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="name" placeholder="Nombre completo" formControlName="name" />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" name="email" placeholder="Correo electrónico" formControlName="email" />
+                        </div>
+                        <div class="col-md-12">
+                            <input type="text" name="phone" placeholder="Teléfono de contacto"
+                                formControlName="phone" />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="password" name="password" placeholder="Contraseña" formControlName="password" />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="password" name="rpassword" placeholder="Repetir contraseña" formControlName="rpassword" />
+                        </div>
+                        <!--
+                        <div class="col-md-12 text-center">
+                            <div style="display: inline-block;">
+                                <re-captcha formControlName="recaptcha" siteKey="{{captchaKey}}"></re-captcha>
+                            </div>
+                            <hr />
+                        </div>
+                        -->
+                        <div class="col-md-12 text-center">
+                                <button class="btn btn-primary" [disabled]="!form.valid" type="submit">Registro</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Contact Form-->

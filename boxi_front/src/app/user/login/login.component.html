@@ -1,0 +1,48 @@
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area"
+    style="background: rgba(0, 0, 0, 0) url('assets/img/student/register.jpg'); background-size: cover">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">INGRESO</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+
+<!--Contact Form Area Start-->
+<div class="contact-form-area section-padding">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h4 class="contact-title">INGRESO DE USUARIOS</h4>
+                <form [formGroup]="form" (ngSubmit)="login()">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="username" name="username" placeholder="Username" formControlName="username" autocomplete="off" />
+                        </div>
+                        <div class="col-md-12">
+                            <input type="password" name="password" placeholder="Contraseña" formControlName="password" autocomplete="off" />
+                        </div>
+                        
+                        <div class="col-md-12 text-center">
+                            <div style="display: inline-block;">
+                                <re-captcha formControlName="recaptcha" siteKey="{{captchaKey}}"></re-captcha>
+                            </div>
+                            <hr />
+                        </div>
+                        
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-primary" [disabled]="!form.valid" type="submit">Ingreso</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Contact Form-->

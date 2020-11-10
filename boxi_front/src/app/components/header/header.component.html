@@ -1,0 +1,105 @@
+<header>
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-5 d-none d-lg-block d-md-block">
+                    <span>¿Necesitas más información? Contáctanos al +571 0000000</span>
+                </div>
+                <div class="col-lg-5 col-md-7 col-12">
+                    <div class="header-top-right">
+                        <div class="content" *ngIf="userinfo != null"><a routerLink="product/all/{{userinfo.id}}"><i
+                                    class="fas fa-bed"></i> Mis productos</a></div>
+                        <div class="content">
+                            <a routerLink="" *ngIf="userinfo == null"><i class="zmdi zmdi-account"></i> Cuenta </a>
+                            <a routerLink="user/account/{{userinfo.id}}" *ngIf="userinfo != null"><i
+                                    class="zmdi zmdi-account"></i> {{userinfo.name}} </a>
+                            <ul class="account-dropdown">
+                                <li><a *ngIf="userinfo == null" routerLink="user/login">Log In</a></li>
+                                <li><a *ngIf="userinfo == null" routerLink="user/register">Registro</a></li>
+                                <li><a href="" (click)="logout()" *ngIf="userinfo != null">Cerrar sesión</a></li>
+                            </ul>
+                        </div>
+                        <div class="content"><a href="https://www.facebook.com/EYSGlobal/" target="_blank"><i
+                                    class="zmdi zmdi-facebook"></i></a></div>
+                        <div class="content"><a href="https://www.linkedin.com/feed/" target="_blank"><i
+                                    class="zmdi zmdi-linkedin"></i></a></div>
+                        <div class="content"><a href="https://www.linkedin.com/feed/" target="_blank"><i
+                            class="zmdi zmdi-instagram"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-logo-menu sticker">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-12">
+                    <div class="logo" style="padding-bottom:45px">
+                        <a routerLink=""><img src="assets/img/logo.svg" width="180" alt="BOXI"></a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-12">
+                    <div class="mainmenu-area pull-center">
+                        <div class="mainmenu d-none d-lg-block">
+                            <nav>
+                                <ul id="nav">
+                                    <li class="current"><a routerLink="">Inicio</a></li>
+                                    <li><a routerLink="about-us">Nosotros</a></li>
+                                    <li><a routerLink="product">Productos</a>
+                                    </li>
+                                    <li><a routerLink="">Nuestras Sedes</a></li>
+                                    <li><a routerLink="contact">Contactanos</a></li>
+                                    <li><a routerLink="help">Ayuda</a></li>
+                                
+                                </ul>
+                            </nav>
+                        </div>
+                 
+                       
+                        <!--Search Form-->
+                        <div class="search">
+                            <div class="search-form">
+                                <form id="search-form" action="#">
+                                    <input type="search" placeholder="Search here..." name="search" />
+                                    <button type="submit">
+                                        <span><i class="fa fa-search"></i></span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!--End of Search Form-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Menu Area start -->
+    <div class="mobile-menu-area">
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="mobile-menu">
+                        <nav id="dropdown">
+                            <ul>
+                                <li><a routerLink="">Inicio</a></li>
+                                <li><a routerLink="">Nosotros</a> </li>
+                                <li><a routerLink="">Productos</a>
+                                    <ul>
+                                        <li><a routerLink="">Colchones</a></li>
+                                        <li><a routerLink="">Combos</a></li>
+                
+                                    </ul>
+                                </li>
+                                <li><a routerLink="">Nuestras Sedes</a></li>
+                                <li><a routerLink="">Contactanos</a></li>
+                                <li><a routerLink="">Ayuda</a></li>                                 
+                               
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Menu Area end -->
+</header>

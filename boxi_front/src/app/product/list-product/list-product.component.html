@@ -1,0 +1,91 @@
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area"
+    style="background: rgba(0, 0, 0, 0) url('assets/img/slider/colchon-slider.jpg'); background-size: cover">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">PRODUCTOS ASOCIADOS</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+
+<!--Course Details Area Start-->
+<div class="course-details-area section-padding">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="course-duration">
+                    <div class="duration-title">
+                        <div class="text"><span>Producto</span> <span>Dimensiones</span> <span class="text-right">Fecha</span></div>
+                    </div>
+
+                    <div class="duration-text course-list" *ngFor="let pr of productsUser;">
+                        <div class="text" data-toggle="modal" data-target="#modalcourse" (click)="modal(pr)">
+                            <span style="margin-left: 10px;">{{pr.product.title}}</span><span>{{pr.product.dimensions_map.measurement}}</span>
+                            <span class="text-right">{{pr.product.name}}  - {{pr.product.dimensions}} </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--End of Course Details Area-->
+
+<!-- Modal -->
+<div class="modal fade" id="modalcourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" *ngIf="product != null">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{product.product.title}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="contact-form-area">
+
+                        <div class="box">
+                            <div>
+                                <h4 class="contact-title text-center">
+                                    {{training.training.title}} -
+                                    ${{ training.price - ( (training.price * training.discount) / 100) }}
+                                </h4>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="text"
+                                                value="{{training.city}}" readonly />
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="text" value="{{training.start_date}} - {{training.end_date}}"
+                                                readonly />
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="text" value="{{training.duration}} Horas" readonly />
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="text" value="Instructor: {{training.instructor.name}}"
+                                                readonly />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,250 @@
+
+<!--Slider Area Start-->
+<div class="slider-area slider-two">
+    <div class="preview-2">
+        <div id="nivoslider" class="slides">
+            <img *ngFor="let s of sliders; let i = index" src="{{s.image}}" alt="" title="#slider-1-caption{{i+1}}" />
+        </div>
+        <div *ngFor="let s of sliders; let i = index" id="slider-1-caption{{i+1}}"
+            class="nivo-html-caption nivo-caption">
+            <div class="banner-content slider-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-content-wrapper">
+                                <div class="text-content">
+                                    <h1 class="title1">{{s.title}}</h1>
+                                    <p class="sub-title d-none d-lg-block">
+                                        {{s.description}}
+                                    </p>
+                                    <div class="banner-readmore">
+                                        <a class="button-default bg-blue" href="{{s.link}}">Ver más</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Slider Area-->
+
+
+<!-- Published Courses -->
+<!--Course Area Start-->
+
+<!-- <div class="course-area section-padding bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title-wrapper">
+                    <div class="section-title">
+                        <h3>NUESTROS CURSOS EN EL MES</h3>
+                        <p>¡Haz click para descubrir todas las capacitaciones que tenemos para tí!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <owl-carousel [options]="carouselOptions">
+            <div class="item col-md-12" *ngFor="let m of [1,2,3,4,5,6,7,8,9,10,11,12]">
+                <div class="single-item">
+                    <div class="single-item-image overlay-effect">
+                        <a><img src="assets/img/months/{{m}}.jpg" alt=""></a>
+                    </div>
+                    <div class="single-item-text text-center">
+                        <h4 style="margin-top: -15px;"><a>{{ m | monthname}}</a></h4>
+                        <div class="single-item-text-info"></div>
+                    </div>
+                    <div class="button-bottom">
+                        <a routerLink="/training/catalogue/month/{{m}}" class="button-default">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </owl-carousel>
+
+    </div>
+</div> -->
+
+<!--End of Course Area-->
+<!-- End Published Courses -->
+
+<!-- Bootstrap Slider -->
+<!-- <div class="course-area section-padding bg-white">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title-wrapper">
+                    <div class="section-title">
+                        <h3>NUESTRO PLAN CARRERA</h3>
+                        <p>¡Conoce nuestros planes para lograr el éxito!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="assets/img/slider/CORE.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="assets/img/slider/LTERF.png" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="assets/img/slider/RAN.png" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="assets/img/slider/TX.png" alt="Second slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- End Bootstrap Slider -->
+
+
+<!--Teachers Area Start-->
+<!-- <div class="teachers-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title-wrapper">
+                    <div class="section-title">
+                        <h3>NUESTROS INSTRUCTORES</h3>
+                        <p>Click aquí para que puedas ver la biografía de todo el equipo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <owl-carousel [options]="carouselOptions" [items]="instructors">
+            <div class="item col-md-12" *ngFor="let i of instructors">
+                <div class="single-teacher-item">
+                    <div class="single-teacher-image">
+                        <a><img [src]="i.image" alt=""></a>
+                    </div>
+                    <div class="single-teacher-text">
+                        <h3><a>{{i.name}}</a></h3>
+                        <h4>Instructor</h4>
+                        <p>{{i.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </owl-carousel>
+    </div>
+</div> -->
+<!--End of Teachers Area-->
+
+
+<!--About Area Start-->
+<!-- <div class="about-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="about-container">
+                    <h3>¿POR QUÉ E&S?</h3>
+                    <p style="text-align: justify">Somos un proveedor global de conocimiento y soluciones de ingenieria
+                        en el
+                        sector de las TIC. Con más de 15 años de experiencia en
+                        el mercado y un selecto grupo de profesionales de alto nivel,
+                        brindamos servicios de capacitacion práctica con maquetas reales o
+                        virtuales, enfocadas a las necesidades reales de los profesionales del sector.
+                        Con E&S UNIVERSITY como HALP (Huawei Authorized Learning Partner)
+                        crecerás personal y profesionalmente, especializándote en una línea de negocio,
+                        obtendrás certificaciones HCNA, HCNP, HCIE,
+                        lograrás aumentar tus oportunidades laborales
+                        y conectarás con otros profesionales del sector para formar relaciones de
+                        networking invaluables.</p>
+                    <a class="button-default" routerLink="about">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!--End of About Area-->
+
+<div _ngcontent-serverapp-c77="" class="ps-home-features canales"><div _ngcontent-serverapp-c77="" class="container"><div _ngcontent-serverapp-c77="" class="tit-mas-boxi-2"><h3 _ngcontent-serverapp-c77="">Boxi tiene más canales para ti</h3></div><div _ngcontent-serverapp-c77="" class="ps-section__content"><figure _ngcontent-serverapp-c77=""><div _ngcontent-serverapp-c77="" class="ps-block--box-icon2 text-center"><div _ngcontent-serverapp-c77="" class="row justify-content-around"><div _ngcontent-serverapp-c77="" class="col-6 col-md-3 ng-star-inserted"><picture _ngcontent-serverapp-c77=""><source _ngcontent-serverapp-c77="" type="image/webp" class="iconos-segundarios" srcset="assets/img/boxi/home/iconos/boxi-lab.webp"><img _ngcontent-serverapp-c77="" class="iconos-segundarios" src="assets/img/boxi/home/iconos/boxi-lab.png" alt="Boxi Lab"></picture><figure _ngcontent-serverapp-c77=""><a _ngcontent-serverapp-c77="" routerlinkactive="active" href="/colchones/tiendas"><figcaption _ngcontent-serverapp-c77="" class="texto-naranja"> Toma un siesta </figcaption><p _ngcontent-serverapp-c77=""> En nuestro BoxiLab y prueba los materiales de tu próximo descanso. </p></a></figure></div><div _ngcontent-serverapp-c77="" class="col-6 col-md-3 ng-star-inserted"><picture _ngcontent-serverapp-c77=""><source _ngcontent-serverapp-c77="" type="image/webp" class="iconos-segundarios" srcset="assets/img/boxi/home/iconos/asesores.webp"><img _ngcontent-serverapp-c77="" class="iconos-segundarios" src="assets/img/boxi/home/iconos/asesores.png" alt="Asesores"></picture><figure _ngcontent-serverapp-c77=""><a _ngcontent-serverapp-c77="" routerlinkactive="active" href="/colchones/tiendas"><figcaption _ngcontent-serverapp-c77="" class="texto-naranja"> Comunícate con </figcaption><p _ngcontent-serverapp-c77=""> Nuestros asesores del descanso para recibir el mejor consejo. </p></a></figure></div><div _ngcontent-serverapp-c77="" class="col-6 col-md-3 ng-star-inserted"><picture _ngcontent-serverapp-c77=""><source _ngcontent-serverapp-c77="" type="image/webp" class="iconos-segundarios" srcset="assets/img/boxi/home/iconos/boxi-movil.webp"><img _ngcontent-serverapp-c77="" class="iconos-segundarios" src="assets/img/boxi/home/iconos/boxi-movil.png" alt="Boxi Móvil"></picture><figure _ngcontent-serverapp-c77=""><a _ngcontent-serverapp-c77="" routerlinkactive="active" href="/colchones/boxi-movil"><figcaption _ngcontent-serverapp-c77="" class="texto-naranja"> Prueba tu colchón nuevo </figcaption><p _ngcontent-serverapp-c77=""> Sin moverte de casa en el Boxi Móvil. </p></a></figure></div><!----></div></div></figure></div></div></div>
+
+<!--Latest News Area Start-->
+<div class="latest-area section-padding bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title-wrapper">
+                    <div class="section-title">
+                        <h3>NOTICIAS</h3>
+                        <p>Conoce las últimas noticias de nuestro equipo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <owl-carousel [options]="carouselOptions" [items]="blogs">
+            <div class="item col-md-12" *ngFor="let b of blogs">
+                <div class="single-item">
+                    <div class="single-item-image overlay-effect" style="height: 200px;"
+                        [ngStyle]="{background: 'url(' + b.img + ')', 'background-size': 'cover'}">
+
+                    </div>
+                    <div class="single-item-text text-center">
+                        <h4 style="margin-top: -15px;"><a>{{b.title}}</a></h4>
+                        <div class="single-item-text-info"></div>
+                    </div>
+                    <div class="button-bottom">
+                        <a href="{{b.link}}" target="_blank" class="button-default">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </owl-carousel>
+
+    </div>
+</div>
+<!--End of Latest News Area-->
+
+<!--Fun Factor Area Start-->
+<div class="fun-factor-area section-margin">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title-wrapper white">
+                    <div class="section-title">
+                        <h3>¡TE DAMOS ALGUNAS RAZONES PARA ELEGIRNOS!</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="single-fun-factor">
+                    <h4>Colchones</h4>
+                    <h2><span class="counter" [countUp]="45" [options]="{duration:5}"></span>+</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-fun-factor">
+                    <h4>Camas</h4>
+                    <h2><span class="counter" [countUp]="1345" [options]="{duration:5}"></span>+</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-fun-factor">
+                    <h4>Pais </h4>
+                    <h2><span class="counter" [countUp]="20" [options]="{duration:5}"></span>+</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Fun Factor Area-->
+
